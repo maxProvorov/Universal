@@ -112,6 +112,7 @@
         wp_reset_postdata(); // Сбрасываем $post
         ?>        
     </ul>
+  <div class="main-grid">
     <ul class="article-grid">
         <?php		
             global $post;
@@ -216,3 +217,7 @@
             }
             wp_reset_postdata(); // Сбрасываем $post
         ?>
+    </ul>
+    <?php get_sidebar() ?>
+  </div>
+</div>
