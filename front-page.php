@@ -121,6 +121,7 @@
                 //кол-во пстов
                 'posts_per_page' =>7,
                 'tag'=>  'популярное',
+                'category__not_in' => '34',
             ] );
             //если есть посты
             if ( $query->have_posts() ) {
@@ -220,4 +221,95 @@
     </ul>
     <?php get_sidebar() ?>
   </div>
+</div>
+<?php		
+global $post;
+
+// Цикл для статьи широкого блока
+$query = new WP_Query( [
+	'posts_per_page' => 1,
+	'category_name' => 'investigation',
+] );
+
+if ( $query->have_posts() ) {
+	while ( $query->have_posts() ) {
+		$query->the_post();
+		?>
+		<section class="investigation" style = "background: linear-gradient(0deg, rgba(64, 48, 61, 0.45), rgba(64, 48, 61, 0.45)),  url(<?php echo get_the_post_thumbnail_url()?>) no-repeat center center">
+            <div class="container">
+                <h2 class="investigation-title"><?php echo mb_strimwidth(get_the_title(),0, 90, '...') ?></h2>
+                <a href="<?php echo get_the_permalink() ?>" class="more">Читать статью</a>
+            </div>
+        </section>
+		<?php 
+	}
+} else {
+	// Постов не найдено
+}
+
+wp_reset_postdata(); // Сбрасываем $post
+?>
+
+
+
+
+
+<div class="container">
+    <div class="digest-wrapper">
+        <ul class="digest">
+            <?php
+            //Объявляем глобальную переменную
+            global $post;
+            $myposts = get_posts([ 
+                'numberposts' => 6,
+                'offset' => 1,
+            ]);
+            //проверка есть ли посты
+            if( $myposts ){
+                    //если есть, запускаем цикл
+                foreach( $myposts as $post ){
+                      setup_postdata( $post );
+                      ?>
+                      <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+                    <li class="post">
+                          <li class="digest-item">
+                            <a href="<?php the_permalink() ?>" class="digest-item-permalink">
+                              <img src="<?php echo get_the_post_thumbnail_url() ?>" class="digest-thumb">
+                            </a>
+                            <div class="digest-info">
+                              <button class="bookmark">
+                                <svg width="14" height="18" class="icon icon-bookmark">
+                                  <use xlink:href=""></use>
+                                </svg>
+                              </button>
+                              <?php the_category(); ?>
+                              <a href="#" class="digest-item-permalink">
+                                <h3 class="digest-title"><?php echo mb_strimwidth(get_the_title(),0, 60, '...') ?></h3>
+                              </a>
+                              <p class="digest-excerpt"><?php echo mb_strimwidth(get_the_excerpt(),0, 90, '...'); ?></p>
+                              <div class="digest-footer">
+                                <span class="digest-date"><?php the_time('j F')?></span>
+                                <div class="comments digest-comments">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/images/comment-grey.svg' ?>" alt="comment icon" class="icon comments-icon">                                                
+                                    <span class="comments-counter"><?php comments_number('0', '1', '%')?></span>
+                                </div>
+                                <div class="likes digest-likes">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/images/heart-grey.svg' ?>" alt="icon: like" class="likes-icon">
+                                    <span class="likes-counter"><?php comments_number('0', '1', '%')?></span>
+                                </div>
+                              </div>
+                              <!-- /.digest-footer -->
+                            </div>
+                            <!-- /.digest-info -->
+                          </li>                        
+                  <?php 
+                }
+            } else {
+                // Постов не найдено
+                ?> <p>Постов не найдено</p><?php
+            }
+            wp_reset_postdata(); // Сбрасываем $post
+            ?>  
+        </ul>
+    </div>
 </div>

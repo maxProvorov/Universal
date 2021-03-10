@@ -209,19 +209,6 @@ body {
   border-radius: 50%;
 }
 
-.hero .left .post-categories {
-  padding: 0;
-  margin: 0;
-}
-
-.hero .left .post-categories a {
-  color: #4592FF;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 12px;
-  text-decoration: none;
-}
-
 .hero .left .post-title {
   font-family: 'Roboto Slab, serif';
   font-weight: bold;
@@ -236,19 +223,6 @@ body {
 .hero .left .post-text {
   position: relative;
   z-index: 2;
-}
-
-.hero .left .more {
-  display: inline-block;
-  color: #fff;
-  padding: 10px 20px;
-  padding-right: 50px;
-  border-radius: 20px;
-  text-decoration: none;
-  background-color: #4592FF;
-  background-image: url("../images/arrow.svg");
-  background-position: center right 20px;
-  background-repeat: no-repeat;
 }
 
 .hero .right {
@@ -309,6 +283,37 @@ body {
   line-height: 20px;
   margin-bottom: 0;
   margin-top: 8px;
+}
+
+.more {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  padding-right: 50px;
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: #4592FF;
+  background-image: url("../images/arrow.svg");
+  background-position: center right 20px;
+  background-repeat: no-repeat;
+}
+
+.more:visited, .more:focus, .more:hover {
+  color: #fff;
+}
+
+.post-categories {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.post-categories a {
+  color: #4592FF;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration: none;
 }
 
 .article-list {
@@ -387,7 +392,7 @@ body {
           align-items: flex-start;
   padding-top: 30px;
   padding-bottom: 30px;
-  margin: 30 0 0 0;
+  margin: 30px 0 20px 0;
 }
 
 .article-grid {
@@ -645,10 +650,6 @@ body {
   margin-right: 7px;
 }
 
-.article-grid-item-2 .date-counter, .article-grid-item-2 .comments-counter, .article-grid-item-2 .likes-counter {
-  margin-left: 5px;
-}
-
 .article-grid-item-3 {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
@@ -730,6 +731,10 @@ body {
   color: #939699;
   font-size: 12px;
   line-height: 15px;
+  margin-left: 5px;
+}
+
+.likes-counter {
   margin-left: 5px;
 }
 
@@ -895,5 +900,131 @@ body {
 .widget-soc-icon img {
   width: 50px;
   height: 50px;
+}
+
+.investigation {
+  padding: 50px 0 55px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.investigation-title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  color: #FFFFFF;
+  max-width: 946px;
+  margin: 0 auto 25px;
+}
+
+.favourites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.digest {
+  margin-top: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0 25px;
+}
+
+.digest-wrapper {
+  width: 74%;
+}
+
+.digest-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 0;
+}
+
+.digest-item:not(:last-child) {
+  border-bottom: 1px solid #D9DADB;
+}
+
+.digest-item-permalink {
+  text-decoration: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.digest-thumb {
+  width: 336px;
+  height: 195px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 25px;
+}
+
+.digest-info {
+  position: relative;
+  width: 100%;
+}
+
+.digest-title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  color: #262D33;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  max-width: 400px;
+}
+
+.digest-excerpt {
+  margin: 0 0 20px;
+}
+
+.digest-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.digest-date, .digest-likes, .digest-comments {
+  margin-right: 11px;
+  color: #939699;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bookmark {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.bookmark svg {
+  fill: #BCBFC2;
 }
 /*# sourceMappingURL=universal-theme.css.map */
