@@ -28,7 +28,16 @@
                             </div>
                         </a>
                         <div class="post-text">
-                            <?php the_category(); ?>
+                            <?php 
+                                foreach (get_the_category() as $category) {
+                                    printf(
+                                        '<a href="%s" class="category_link %s">%s</a>',
+                                        esc_url(get_category_link($category)),
+                                        esc_html($category -> slug),
+                                        esc_html($category -> name),
+                                    );
+                                }
+                            ?>
                             <h2 class="post-title"><?php echo mb_strimwidth(get_the_title(),0, 60, '...') ?></h2>
                             <a href="<?php echo get_the_permalink() ?>" class="more">Читать далее</a>
                         </div>
@@ -62,7 +71,16 @@
                               ?>
                               <!-- Вывода постов, функции цикла: the_title() и т.д. -->
                             <li class="post">
-                                <?php the_category(); ?>
+                                <?php 
+                                foreach (get_the_category() as $category) {
+                                    printf(
+                                        '<a href="%s" class="category_link %s">%s</a>',
+                                        esc_url(get_category_link($category)),
+                                        esc_html($category -> slug),
+                                        esc_html($category -> name),
+                                    );
+                                }
+                                ?>
                                 <a class = "post-permalink" href="<?php echo get_the_permalink() ?>">
                                     <h4 class="post-title"><?php echo mb_strimwidth(get_the_title(),0, 60, '...') ?></h4>
                                 </a>                                
@@ -278,15 +296,25 @@ wp_reset_postdata(); // Сбрасываем $post
                             </a>
                             <div class="digest-info">
                               <button class="bookmark">
-                                <svg width="14" height="18" class="icon icon-bookmark">
-                                  <use xlink:href=""></use>
+                                <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 0H12C13.1046 0 14 0.89543 14 2V18L7.09495 13L0 18V2C0 0.89543 0.89543 0 2 0Z" fill="#BCBFC2"/>
                                 </svg>
+
                               </button>
-                              <?php the_category(); ?>
+                                <?php 
+                                foreach (get_the_category() as $category) {
+                                    printf(
+                                        '<a href="%s" class="category_link %s">%s</a>',
+                                        esc_url(get_category_link($category)),
+                                        esc_html($category -> slug),
+                                        esc_html($category -> name),
+                                    );
+                                }
+                                ?>
                               <a href="#" class="digest-item-permalink">
                                 <h3 class="digest-title"><?php echo mb_strimwidth(get_the_title(),0, 60, '...') ?></h3>
                               </a>
-                              <p class="digest-excerpt"><?php echo mb_strimwidth(get_the_excerpt(),0, 90, '...'); ?></p>
+                              <p class="digest-excerpt"><?php echo mb_strimwidth(get_the_excerpt(),0, 110, '...'); ?></p>
                               <div class="digest-footer">
                                 <span class="digest-date"><?php the_time('j F')?></span>
                                 <div class="comments digest-comments">
@@ -311,5 +339,7 @@ wp_reset_postdata(); // Сбрасываем $post
             wp_reset_postdata(); // Сбрасываем $post
             ?>  
         </ul>
-    </div>
+        <?php get_sidebar('bottom') ?>
+    </div>    
 </div>
+   

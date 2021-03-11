@@ -91,16 +91,6 @@
             margin: 0
             border-top: 1px solid #D9DADB
             min-height: 100px
-            &-categories
-                padding: 0
-                margin: 0
-                list-style: none
-                a
-                    font-weight: 900
-                    font-size: 12px
-                    line-height: 15px
-                    text-transform: uppercase
-                    text-decoration: none
             &-permalink
                 text-decoration: none
                 color: #4B5157
@@ -126,13 +116,22 @@
     background-repeat: no-repeat
     &:visited, &:focus, &:hover
         color: #fff
-.post-categories
+.category_link
     padding: 0
     margin: 0
     list-style: none
-    a
+    font-weight: 900
+    font-size: 12px
+    line-height: 15px
+    text-transform: uppercase
+    text-decoration: none
+    &:visited
         color: #4592FF
-        text-transform: uppercase
-        font-weight: 900
-        font-size: 12px
-        text-decoration: none
+    &.javascript
+        color: #6E99AE
+    &.html
+        color: #AC8EE3
+    &.web-design
+        color: #FFA34D
+    &.css
+        color: #3DC47E

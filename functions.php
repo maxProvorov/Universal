@@ -46,8 +46,8 @@ add_action( 'widgets_init', 'universal_theme_widgets_init' );
 function universal_theme_last_posts_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Поледние посты', 'universal-last-posts' ),
-			'id'            => 'last-posts-sidebar',
+			'name'          => esc_html__( 'Сайдбар снизу', 'universal-last-posts' ),
+			'id'            => 'sidebar-bottom',
 			'description'   => esc_html__( 'Add widgets here.', 'universal-last-posts' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -68,6 +68,12 @@ require get_template_directory() . '/inc/downloader_widget.php';
  * Register виджета Soc_Icon_Widget..
  */
  require get_template_directory() . '/inc/soc_icon_widget.php';
+
+/**
+ * Register виджета Soc_Icon_Widget..
+ */
+ require get_template_directory() . '/inc/bottom_widget.php';
+
 
 
 //Подключение стилей и скртптов
