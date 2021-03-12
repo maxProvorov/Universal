@@ -42,7 +42,12 @@ class Bottom_Widget extends WP_Widget {
 					setup_postdata($post);
 					?>
 					<a href="<?php the_permalink() ?>" class="recent_post_link">
-                        <img src="<?php echo get_the_post_thumbnail_url(null, 'thumbnail') ?>" class="recent-post-thumb">
+                        <img src="<?php if ( has_post_thumbnail() ) {
+                                        echo get_the_post_thumbnail_url(null, 'thumbnail');
+                                        }
+                                        else {
+                                            echo get_template_directory_uri() . '/assets/images/img-default.svg';
+                                        } ?>" class="recent-post-thumb">
 						<div class="recent-post-info">
 							<h4 class="recent-post-title"><?php echo mb_strimwidth(get_the_title(),0, 35, '...') ?></h4>							
 							<span class="recent-post-time">
