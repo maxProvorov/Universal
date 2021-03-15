@@ -38,25 +38,52 @@ function universal_theme_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-}
-add_action( 'widgets_init', 'universal_theme_widgets_init' );
-/**
- * Register sidebar Поледние посты.
- */
-function universal_theme_last_posts_widgets_init() {
+	/**
+ 	* Register sidebar Поледние посты.
+ 	*/
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Сайдбар снизу', 'universal-last-posts' ),
+			'name'          => esc_html__( 'Сайдбар снизу', 'universal-example' ),
 			'id'            => 'sidebar-bottom',
-			'description'   => esc_html__( 'Add widgets here.', 'universal-last-posts' ),
+			'description'   => esc_html__( 'Add widgets here.', 'universal-example' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
 	);
+	/**
+ 	* Register sidebar Меню в подвале.
+ 	*/
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Меню в подвале', 'universal-example' ),
+			'id'            => 'sidebar-footer',
+			'description'   => esc_html__( 'Только для меню!', 'universal-example' ),
+			'before_widget' => '<section id="%1$s" class="footer-menu %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="footer-menu-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	/**
+ 	* Register sidebar Меню в подвале.
+ 	*/
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Текст в подвале', 'universal-example' ),
+			'id'            => 'sidebar-footer-text',
+			'description'   => esc_html__( 'Add menu here.', 'universal-example' ),
+			'before_widget' => '<section id="%1$s" class="footer-text %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '',
+			'after_title'   => '',
+		)
+	);
 }
-add_action( 'widgets_init', 'universal_theme_last_posts_widgets_init' );
+add_action( 'widgets_init', 'universal_theme_widgets_init' );
+
 
 
 /**
