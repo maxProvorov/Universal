@@ -26,7 +26,12 @@
                 'echo'            => true,
             ] );
             ?>      
-            <?php get_search_form(); ?>      
+            <?php get_search_form(); ?>
+            <a href="" class="header-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>    
         </div>
     </div>
 </header>

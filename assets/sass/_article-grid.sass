@@ -212,3 +212,27 @@
 .likes
   &-counter
     margin-left: 5px
+@media screen and ( max-width: 1200px )
+  .article
+    &-grid
+      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr))
+@media screen and ( max-width: 1024px )
+  .article
+    &-grid
+      width: auto
+      padding: 0
+      margin: 0
+      margin-right: 20px
+      grid-template-columns: 1fr
+      grid-template-rows: repeat(3, minmax(300px, max-content))
+      &-item
+        grid-area: auto
+        .tag
+          margin-bottom: 30px
+@media screen and ( max-width: 960px )
+  .main
+    &-grid
+      flex-wrap: wrap
+  .article
+    &-grid
+      width: 100%

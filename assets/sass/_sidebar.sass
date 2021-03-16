@@ -25,7 +25,6 @@ body
     padding: 25px
     padding-bottom: 55px
     position: relative
-    height: 170px
     .widget
       &-title
         text-transform: none
@@ -150,3 +149,17 @@ body
   img
     width: 50px
     height: 50px
+@media screen and ( max-width: 1200px )
+  .sidebar
+    &-front-page
+      width: 30%
+@media screen and ( max-width: 1024px )
+  .sidebar
+    &-front-page
+      margin-top: 0px !important
+@media screen and ( max-width: 960px )
+  .sidebar
+    &-front-page
+      width: 100%
+  .soc_icon_items
+    justify-content: space-evenly
