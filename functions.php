@@ -144,3 +144,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'homepage-thumb', 65, 65, true ); // Кадрирование изображения
 }
 
+//Меняем стандартный вывод многоточия в excerpt
+add_filter('excerpt_more', function($more) {
+	return '...';
+});

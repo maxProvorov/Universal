@@ -1,3 +1,3 @@
-<?php 
-	get_header();
-	get_footer();
+<?php get_header();?>
+<h1> This is index</h1>
+<?php get_footer();?>
