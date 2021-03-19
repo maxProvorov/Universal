@@ -80,6 +80,48 @@ body {
   display: none;
 }
 
+.header-light {
+  background-color: #fff;
+}
+
+.header-light .logo-name {
+  color: #4592FF;
+}
+
+.header-light .menu-item a {
+  color: #939699;
+}
+
+.header-light .search-form input {
+  background-color: #F5F5F5;
+}
+
+.custom-logo {
+  width: 40px;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo-name {
+  color: #fff;
+  font-family: Roboto Slab;
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+
+.logo a {
+  pointer-events: none;
+  cursor: default;
+}
+
 .menu-item a {
   text-decoration: none;
   color: #fff;
@@ -1181,6 +1223,9 @@ body {
   .sidebar-front-page {
     margin-top: 0px !important;
   }
+  .widget-bottom {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -1191,6 +1236,9 @@ body {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+  .widget-downloader {
+    margin-top: 30px;
   }
 }
 
@@ -1851,14 +1899,6 @@ body {
   fill: #fff;
 }
 
-.post-header-info .clock-icon {
-  margin-right: 5px;
-}
-
-.post-header-info .comments-counter {
-  color: #fff;
-}
-
 .post-header-date {
   margin-right: 20px;
 }
@@ -1871,10 +1911,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 0.85;
 }
 
 .post-header-likes svg, .post-header-comments svg {
   margin-right: 5px;
+}
+
+.post-header-likes .comments-counter, .post-header-comments .comments-counter {
+  color: #ffffff;
 }
 
 .post-header-nav {
@@ -1942,7 +1987,6 @@ body {
   margin-bottom: 43px;
   max-width: 630px;
   opacity: 0.85;
-  color: #fff;
 }
 
 .post-header-title {
@@ -1957,22 +2001,216 @@ body {
 }
 
 .post-header-title-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.post-header-title-wrapper .bookmark {
   position: relative;
-  margin-bottom: 60px;
 }
 
 .post-header-title-wrapper .bookmark svg {
-  width: 21px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   fill: #BCBFC2;
+}
+
+.post-author {
+  position: absolute;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #D9DADB;
+  min-width: 263px;
+}
+
+.post-author-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #4B5157;
+  padding: 35px 25px 10px;
+}
+
+.post-author-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.post-author-name {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #262D33;
+}
+
+.post-author-rank {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+
+.post-author-posts {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Lato Black", sans-serif;
+  color: #262D33;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.post-author-link {
+  color: #262D33;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-top: 1px solid #D9DADB;
+  width: 100%;
+  text-align: center;
+  font-family: "Lato Black", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.post-author-link:visited {
+  color: #262D33;
+}
+
+.post-content {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.post-content p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #4B5157;
+  margin: 30px 0;
+}
+
+.post-content p:first-child {
+  max-width: 623px;
+}
+
+.post-content .has-drop-cap:not(:focus):first-letter {
+  color: #4592FF;
+  font-family: "Lato Black", sans-serif;
+}
+
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.post-content h1 {
+  font-size: 30px;
+}
+
+.post-content h2 {
+  font-size: 25px;
+}
+
+.post-content h3 {
+  font-size: 22px;
+}
+
+.post-content h4 {
+  font-size: 18px;
+}
+
+.post-content h5 {
+  font-size: 16px;
+}
+
+.post-content h6 {
+  font-size: 14px;
+}
+
+.post-content ul, .post-content ol {
+  margin-top: 20px;
+  padding: 0;
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.post-content blockquote {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  margin-left: 0;
+  margin-top: 80px;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.post-content blockquote::before {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  content: '';
+  background-image: url(../images/quote.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  z-index: -1;
+}
+
+.post-content blockquote cite {
+  font-style: normal;
+}
+
+.post .tags-links {
+  padding-bottom: 60px;
+  border-bottom: 1px solid #D9DADB;
+  max-width: 623px;
+  width: 100%;
+  display: block;
+}
+
+.post .tags-links a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 5px 15px;
+  color: #262D33;
+  border: 1px solid #D9DADB;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.career-post-excerpt {
+  color: #fff;
 }
 /*# sourceMappingURL=universal-theme.css.map */

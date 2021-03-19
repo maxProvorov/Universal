@@ -10,14 +10,16 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
     
-<header class="header">
+<header class="header header-light">
     <div class="container">
         <div class="header-wrapper">
-            <?php if( has_custom_logo() ){
-	            the_custom_logo();
-            }
-            ?>
             <?php 
+            if( has_custom_logo() ){
+	            echo '<div class= "logo">' . get_custom_logo() . '<span class= "logo-name">' . get_bloginfo( 'name' ) . '</span></div>';
+            }else{
+                '<span class= "logo-name">' . get_bloginfo( 'name' ) . '</span>';
+            }
+            
             wp_nav_menu( [
                 'theme_location'  => 'header_menu',
                 'container'       => 'nav', 

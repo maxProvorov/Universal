@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php get_header('post');?>
 <main class="site-main">
     <?php
     //запускааем цикл, проверяем есть ли посты
