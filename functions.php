@@ -81,10 +81,22 @@ function universal_theme_widgets_init() {
 			'after_title'   => '',
 		)
 	);
+		/**
+ 	* Register sidebar Меню в подвале.
+ 	*/
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Сайдбар для постов внизу', 'universal-example' ),
+			'id'            => 'sidebar-post',
+			'description'   => esc_html__( 'Добавить посты', 'universal-example' ),
+			'before_widget' => '<section id="%1$s" class="post-page-sidebar %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="post-sidebar-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'universal_theme_widgets_init' );
-
-
 
 /**
  * Register виджета Downloader_Widget..
@@ -100,6 +112,12 @@ require get_template_directory() . '/inc/downloader_widget.php';
  * Register виджета Soc_Icon_Widget..
  */
  require get_template_directory() . '/inc/bottom_widget.php';
+
+
+/**
+ * Register  post-widget  в подвале.
+ */
+ require get_template_directory() . '/inc/post_widget.php';
 
 
 

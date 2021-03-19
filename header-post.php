@@ -14,10 +14,18 @@
     <div class="container">
         <div class="header-wrapper">
             <?php 
-            if( has_custom_logo() ){
-	            echo '<div class= "logo">' . get_custom_logo() . '<span class= "logo-name">' . get_bloginfo( 'name' ) . '</span></div>';
-            }else{
-                '<span class= "logo-name">' . get_bloginfo( 'name' ) . '</span>';
+           if (is_front_page()) {
+                if( has_custom_logo() ){
+	                echo '<div class= "logo">' . get_custom_logo() . '<span class= "logo-name">' . get_bloginfo( 'name' ) . '</span></div>';
+                }else{
+                    echo '<span class= "logo-name">' . get_bloginfo( 'name' ) . '</span>';
+                }
+            }else {
+                if( has_custom_logo() ){
+	                echo '<a href="'. home_url().'"><div class= "logo">' . get_custom_logo() . '<span class= "logo-name">' . get_bloginfo( 'name' ) . '</span></div></a>';
+                }else{
+                    echo '<a href="'. home_url().'"><span class= "logo-name">' . get_bloginfo( 'name' ) . '</span></a>';
+                }                
             }
             
             wp_nav_menu( [

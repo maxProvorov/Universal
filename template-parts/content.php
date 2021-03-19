@@ -129,15 +129,20 @@
             );
             ?>
         </div><!-- .entry-content -->
+    
+        <footer class="entry-footer">
+            <?php 
+                /* translators: used between list items, there is a space after the comma */
+                $tags_list = get_the_tag_list( '', esc_html_x( '', 'list item separator', 'universal' ) );
+                if ( $tags_list ) {
+                    /* translators: 1: list of tags. */
+                    printf( '<span class="tags-links">' . esc_html__( '%1$s', 'universal' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                }
+                //вывод шеринговых ссылок
+                meks_ess_share();
+            ?>
+        </footer><!-- .entry-footer -->
+        
     </div>
-    <footer class="entry-footer">
-		<?php 
-            /* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( '', 'list item separator', 'universal' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'universal' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-        ?>
-	</footer><!-- .entry-footer -->
+    <?php get_sidebar('post'); ?>
 </article>

@@ -2210,7 +2210,81 @@ body {
   margin-right: 10px;
 }
 
+.post-page-sidebar {
+  background-color: #F5F5F5;
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+
+.post-page-sidebar a {
+  text-decoration: none;
+}
+
+.post-widget-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.post-widget-thumb {
+  width: 263px;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.post-widget-title {
+  font-family: Roboto Slab;
+  font-weight: 700;
+  color: #262D33;
+  display: block;
+  width: 220px;
+  height: 50px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.post-widget-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #939699;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+}
+
+.post-widget-info svg {
+  margin-right: 5px;
+}
+
+.post-widget-info .eye {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .career-post-excerpt {
   color: #fff;
+}
+
+.meks_ess {
+  max-width: 623px;
+  margin-top: 0;
+}
+
+.meks_ess_share_label {
+  font-size: 25px;
+  line-height: 30px;
+  font-family: Roboto Slab;
+  margin-top: 30px;
+  margin-bottom: 25px;
 }
 /*# sourceMappingURL=universal-theme.css.map */

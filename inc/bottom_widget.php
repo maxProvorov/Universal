@@ -1,6 +1,6 @@
 <?php
 /**
- * Добавление нового виджета Bpttom_Widget.
+ * Добавление нового виджета Bottom_Widget.
  */
 class Bottom_Widget extends WP_Widget {
 
