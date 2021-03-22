@@ -57,7 +57,7 @@ class Post_Widget extends WP_Widget {
                         else {
                             echo get_template_directory_uri() . '/assets/images/img-default.svg';
                         } ?>" alt="" class="post-widget-thumb">
-					<h4 class="post-widget-title"><?php echo mb_strimwidth(get_the_title(),0, 60, '...'); ?></h4>
+					<h4 class="post-widget-title"><?php echo mb_strimwidth(get_the_title(),0, 45, '...'); ?></h4>
 					<div class="post-widget-info">
 						<div class="eye">
                             <svg width="15" height="15" fill= "#BCBFC2" class="icon likes-icon">
