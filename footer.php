@@ -1,5 +1,24 @@
 <footer class="footer">
-    <div class="container">        
+    <div class="container">
+        <?php 
+        if( !is_page('thankyou')){?>
+              <div id= "footer-form-wrapper" class="footer-form-wrapper">
+            <h3 class="footer-form-title">Подпишитесь на нашу рассылку</h3>
+            <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" class="footer-form">
+                <!-- Поле Email (обязательно) -->
+                <input required type="text" name="email" placeholder="Email" class="input footer-form-input"/>
+                <input type="hidden" name="campaign_token" value="BHcwt" />
+                <!-- Страница благодарности -->
+                <input type="hidden" name="thankyou_url" value="<?php echo home_url('thankyou')?>"/>
+                <!-- Добавить подписчика в цикл на определенный день (по желанию) -->
+                <input type="hidden" name="start_day" value="0" />
+                <!-- Кнопка подписаться -->
+                <button type="submit">Подписаться</button>
+            </form>
+        </div> 
+        <?php }
+        ?>
+           
         <div class="footer-menu-bar">
         	<?php dynamic_sidebar( 'sidebar-footer' ); ?>
         </div>
