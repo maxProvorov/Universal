@@ -175,7 +175,7 @@
                                                 <span class="author-name"><strong><?php the_author()?></strong>: <?php the_author_meta('description')?></span>
                                             </div>
                                             <div class="comments">
-                                                <svg width="19" height="15" fill= "#fff" class="icon comments-icon"">
+                                                <svg width="19" height="15" fill= "#fff" class="icon comments-icon">
                                                     <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#comment"></use>
                                                 </svg>                                                                                              
                                                 <span class="comments-counter"><?php comments_number('0', '1', '%')?></span>
