@@ -11,17 +11,8 @@ get_header();
        <?php single_cat_title() ;?>
    </h1>
    <div class="post-list">
-        <?php 
-        
-        $query = new WP_Query( [            
-            'posts_per_page' => 8,            
-        ] );
-        if ( $query->have_posts() ) {
-
-            while ( $query->have_posts() ) {
-                $query->the_post();?>
-            <a href="<?php echo get_the_permalink() ?>" class="post-card">
-                 
+        <?php while ( have_posts() ){ the_post(); ?>
+            <a href="<?php echo get_the_permalink() ?>" class="post-card">            
                 <img src="<?php if ( has_post_thumbnail() ) {
                     echo get_the_post_thumbnail_url();
                     }
@@ -53,19 +44,18 @@ get_header();
                     </div> <!-- /.author -->
                 </div> <!-- /.post-card-text -->
             </a>
-            <?php }
-
-            wp_reset_postdata();
-        }
-
-        // Выводим пагинацию, если продуктов больше запрошенного количество
-        ?> 
+        <?php } ?>
+        <?php if ( ! have_posts() ){ ?>
+            Записей нет.
+        <?php } ?>
    </div>
-<?php $args = array(
-				'prev_text'    => __('&larr; &nbsp; Назад'),
-				'next_text'    => __('Вперед &nbsp; &rarr;'),
-			);
-			 the_posts_pagination($args); ?>
+   <div class="category-pagination">
+    <?php $args = array(
+            'prev_text'    => __('&larr; &nbsp; Назад'),
+            'next_text'    => __('Вперед &nbsp; &rarr;'),
+        );
+        the_posts_pagination($args); ?>
+    </div>
 </div>
 <?php
 get_footer();
