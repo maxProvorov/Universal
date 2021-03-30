@@ -1863,10 +1863,6 @@ body {
   cursor: pointer;
 }
 
-.footer-copyright {
-  text-transform: capitalize;
-}
-
 @media screen and (max-width: 1024px) {
   .footer-menu {
     -ms-flex-preferred-size: 30%;
@@ -2754,7 +2750,7 @@ body {
   margin-right: 80px;
 }
 
-.contacts-wrapper .right a, .contacts-wrapper .right address {
+.contacts-wrapper .right a, .contacts-wrapper .right address, .contacts-wrapper .right span {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.85);
   font-style: normal;
@@ -2808,6 +2804,11 @@ body {
 }
 
 #contacts-more:visited, #contacts-more:focus, #contacts-more:hover {
+  color: #fff;
+}
+
+.lesson-header {
+  padding: 80px 0;
   color: #fff;
 }
 /*# sourceMappingURL=universal-theme.css.map */
