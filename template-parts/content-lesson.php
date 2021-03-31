@@ -99,3 +99,7 @@
     </div>
    
 </article>
+<?php  
+the_taxonomies();
+//wp_list_categories('taxonomy=genre');
+?>
