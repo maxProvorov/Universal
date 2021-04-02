@@ -7,6 +7,7 @@ Template Post Type: page
 get_header();
 ?>
 <div class="container">
+    <?php if ( function_exists( 'the_breadcrumbs' ) ) the_breadcrumbs(); ?>
    <h1 class="category-title">
        <?php single_cat_title() ;?>
    </h1>

@@ -206,7 +206,7 @@ require get_template_directory() . '/inc/downloader_widget.php';
  require get_template_directory() . '/inc/soc_icon_widget.php';
 
 /**
- * Register виджета Soc_Icon_Widget..
+ * Register виджета bottom_widget..
  */
  require get_template_directory() . '/inc/bottom_widget.php';
 
@@ -215,6 +215,12 @@ require get_template_directory() . '/inc/downloader_widget.php';
  * Register  post-widget  в подвале.
  */
  require get_template_directory() . '/inc/post_widget.php';
+
+ /**
+ * Register  breadcrumbs
+ */
+require get_template_directory() . '/inc/breadcrumbs.php';
+
 
 
 
