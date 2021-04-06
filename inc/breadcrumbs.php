@@ -8,12 +8,12 @@
 function the_breadcrumbs() {
 
 	/* === ОПЦИИ === */
-	$text['home']     = 'Главная'; // текст ссылки "Главная"
+	$text['home']     =  __( 'Home' , 'universal'); // текст ссылки "Главная"
 	$text['category'] = '%s'; // текст для страницы рубрики
 	$text['search']   = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
 	$text['tag']      = 'Записи с тегом "%s"'; // текст для страницы тега
 	$text['author']   = 'Статьи автора %s'; // текст для страницы автора
-	$text['404']      = 'Ошибка 404'; // текст для страницы 404
+	$text['404']      =  __( 'Error 404' , 'universal'); // текст для страницы 404
 	$text['page']     = 'Страница %s'; // текст 'Страница N'
 	$text['cpage']    = 'Страница комментариев %s'; // текст 'Страница комментариев N'
 
@@ -54,7 +54,7 @@ function the_breadcrumbs() {
 		}
 
 		if ( is_category() ) {
-			$category = get_the_category();echo  $sep . $category[0]->taxonomy ='Категория';
+			$category = get_the_category();echo  $sep . $category[0]->taxonomy = __( 'Category' , 'universal');		
 			$parents = get_ancestors( get_query_var('cat'), 'category' );
 			foreach ( array_reverse( $parents ) as $cat ) {
 				$position += 1;
@@ -212,6 +212,31 @@ function the_breadcrumbs() {
 			if ( $show_home_link && $show_current ) echo $sep;
 			echo get_post_format_string( get_post_format() );
 		}
+		elseif (get_post() -> post_type === 'lesson' ) {
+		
+			/* $name = single_cat_title();
+			$category_id = get_cat_ID($name);
+			$category =   get_term($category_id) ;
+			echo  $sep . $category->taxonomy;
+			echo $category_id; */
+			$parents = get_ancestors( get_query_var('cat'), 'category' );
+			foreach ( array_reverse( $parents ) as $cat ) {
+				$position += 1;
+				if ( $position > 1 ) echo $sep;
+				echo sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+			}
+			if ( get_query_var( 'paged' ) ) {
+				$position += 1;
+				$cat = get_query_var('cat');
+				echo $sep . sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+				echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+			} else {
+				if ( $show_current ) {
+					if ( $position >= 1 ) echo $sep;
+					echo $before . sprintf( $text['category'], single_cat_title() ) . $after;
+				} elseif ( $show_last_sep ) echo $sep;
+			}
+		} 
 
 		echo $wrap_after;
 

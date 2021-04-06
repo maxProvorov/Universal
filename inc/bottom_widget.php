@@ -10,8 +10,8 @@ class Bottom_Widget extends WP_Widget {
 		// __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
 		parent::__construct(
 			'bottom_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: bottom_widget
-			'Последние статьи',
-			array( 'description' => 'Вывод последних статей', 'classname' => 'widget-bottom', )
+			__( 'Last articles' , 'universal'),
+			array( 'description' => __( 'Output last articles' , 'universal'), 'classname' => 'widget-bottom', )
 		);
 
 		// скрипты/стили виджета, только если он активен
@@ -72,7 +72,7 @@ class Bottom_Widget extends WP_Widget {
 	 * @param array $instance сохраненные данные из настроек
 	 */
 	function form( $instance ) {
-		$title = @ $instance['title'] ?: 'Последние статьи';
+		$title = @ $instance['title'] ?: __( 'Last articles' , 'universal');
         $count = @ $instance['count'] ?: '7';
 		?>
 		<p>

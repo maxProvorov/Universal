@@ -10,8 +10,8 @@ class Soc_Icon_Widget extends WP_Widget {
 		// __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
 		parent::__construct(
 			'soc_icon_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: soc_icon_widget
-			'Социальные сети',
-			array( 'description' => 'Социальные сети', 'classname' => 'widget-soc-icon', )
+			 __( 'Social networks' , 'universal'),
+			array( 'description' => __( 'Social networks' , 'universal'), 'classname' => 'widget-soc-icon', )
 		);
 
 		// скрипты/стили виджета, только если он активен
@@ -65,7 +65,7 @@ class Soc_Icon_Widget extends WP_Widget {
 	 * @param array $instance сохраненные данные из настроек
 	 */
 	function form( $instance ) {
-		$title = @ $instance['title'] ?: 'Наши соцсети';
+		$title = @ $instance['title'] ?: __( 'Our social networks' , 'universal');
 		$facebook = @ $instance['facebook'] ?: '';
         $instagram = @ $instance['instagram'] ?: '';
 		$youtube = @ $instance['youtube'] ?: '';

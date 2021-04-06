@@ -10,6 +10,8 @@ get_header();
     <h1 class="category-title">
        <?php single_cat_title() ;?>
    </h1>
+   <?php if ( function_exists( 'the_breadcrumbs' ) ) the_breadcrumbs();?>
+   
    <div class="post-list">
         <?php while ( have_posts() ){ the_post(); ?>
             <a href="<?php echo get_the_permalink() ?>" class="post-card">            

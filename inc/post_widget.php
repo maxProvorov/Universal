@@ -10,8 +10,8 @@ class Post_Widget extends WP_Widget {
 		// __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
 		parent::__construct(
 			'post_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: post_widget
-			'Статьи той же категории кроме текущей',
-			array( 'description' => 'Вывод последних статей', 'classname' => 'widget-post', )
+			__( 'Articles in the same category except the current one' , 'universal'),
+			array( 'description' => __( 'Output last articles' , 'universal'), 'classname' => 'widget-post', )
 		);
 
 		// скрипты/стили виджета, только если он активен

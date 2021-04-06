@@ -2,6 +2,8 @@
 //Добавление расширенных возможностей
 if ( ! function_exists( 'universal_theme_setup' ) ) :
     function universal_theme_setup() {
+		//Добавляем файл перевода
+		load_theme_textdomain( 'universal', get_template_directory() . '/languages' );
         //Добавление тега title
         add_theme_support( 'title-tag' );
         //Добавление миниатюры
@@ -16,8 +18,8 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
          ] );
         
 	    register_nav_menus( [
-            'header_menu' => 'Меню в шапке',
-            'footer_menu' => 'Меню в подвале'
+            'header_menu' =>  __( 'Menu in header' , 'universal'),
+            'footer_menu' => __( 'Menu in footer' , 'universal')
 	    ] );
 		
 		// Добавляем тип записи
@@ -26,20 +28,20 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 				register_post_type( 'lesson', [
 					'label'  => null,
 					'labels' => [
-						'name'               => 'Видеоуроки', // основное название для типа записи
-						'singular_name'      => 'Урок', // название для одной записи этого типа
-						'add_new'            => 'Добавить урок', // для добавления новой записи
-						'add_new_item'       => 'Добавление урока', // заголовка у вновь создаваемой записи в админ-панели.
-						'edit_item'          => 'Редактирование урока', // для редактирования типа записи
-						'new_item'           => 'Новый урок', // текст новой записи
-						'view_item'          => 'Смотреть уроки', // для просмотра записи этого типа.
-						'search_items'       => 'Искать уроки', // для поиска по этим типам записи
-						'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
-						'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+						'name'               => __('Video lessons', 'universal'), // основное название для типа записи
+						'singular_name'      =>  __('lesson', 'universal'), // название для одной записи этого типа
+						'add_new'            => __('Add lesson', 'universal'), // для добавления новой записи
+						'add_new_item'       => __('Add lesson', 'universal'), // заголовка у вновь создаваемой записи в админ-панели.
+						'edit_item'          => __('Edit lesson', 'universal'), // для редактирования типа записи
+						'new_item'           => __('New lesson', 'universal'), // текст новой записи
+						'view_item'          => __('View lesson', 'universal'), // для просмотра записи этого типа.
+						'search_items'       => __('Search lesson', 'universal'), // для поиска по этим типам записи
+						'not_found'          => __('Not found', 'universal'), // если в результате поиска ничего не было найдено
+						'not_found_in_trash' => __('Not found in trash', 'universal'), // если не было найдено в корзине
 						'parent_item_colon'  => '', // для родителей (у древовидных типов)
-						'menu_name'          => 'Видеоуроки', // название меню
+						'menu_name'          => __('Video lessons', 'universal'), // название меню
 					],
-					'description'         => 'Раздел с видеоуроками',
+					'description'         => 'Section with lessons',
 					'public'              => true,
 					// 'publicly_queryable'  => null, // зависит от public
 					// 'exclude_from_search' => null, // зависит от public
@@ -75,15 +77,15 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 					'labels'        => array(
 						'name'              => _x( 'Genres', 'taxonomy general name' ),
 						'singular_name'     => _x( 'Genre', 'taxonomy singular name' ),
-						'search_items'      =>  __( 'Search Genres' ),
-						'all_items'         => __( 'All Genres' ),
-						'parent_item'       => __( 'Parent Genre' ),
-						'parent_item_colon' => __( 'Parent Genre:' ),
-						'edit_item'         => __( 'Edit Genre' ),
-						'update_item'       => __( 'Update Genre' ),
-						'add_new_item'      => __( 'Add New Genre' ),
-						'new_item_name'     => __( 'New Genre Name' ),
-						'menu_name'         => __( 'Genre' ),
+						'search_items'      =>  __( 'Search Genres' , 'universal'),
+						'all_items'         => __( 'All Genres' , 'universal'),
+						'parent_item'       => __( 'Parent Genre' , 'universal'),
+						'parent_item_colon' => __( 'Parent Genre:' , 'universal'),
+						'edit_item'         => __( 'Edit Genre' , 'universal'),
+						'update_item'       => __( 'Update Genre' , 'universal'),
+						'add_new_item'      => __( 'Add New Genre' , 'universal'),
+						'new_item_name'     => __( 'New Genre Name' , 'universal'),
+						'menu_name'         => __( 'Genre' , 'universal'),
 					),
 					'show_ui'       => true,
 					'query_var'     => true,
@@ -96,19 +98,19 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 					'labels'        => array(
 						'name'                        => _x( 'Teachers', 'taxonomy general name' ),
 						'singular_name'               => _x( 'Teacher', 'taxonomy singular name' ),
-						'search_items'                =>  __( 'Search Teachers' ),
-						'popular_items'               => __( 'Popular Teachers' ),
-						'all_items'                   => __( 'All Teachers' ),
+						'search_items'                =>  __( 'Search Teachers' , 'universal'),
+						'popular_items'               => __( 'Popular Teachers' , 'universal'),
+						'all_items'                   => __( 'All Teachers' , 'universal'),
 						'parent_item'                 => null,
 						'parent_item_colon'           => null,
-						'edit_item'                   => __( 'Edit Teacher' ),
-						'update_item'                 => __( 'Update Teacher' ),
-						'add_new_item'                => __( 'Add New Teacher' ),
-						'new_item_name'               => __( 'New Teacher Name' ),
-						'separate_items_with_commas'  => __( 'Separate teachers with commas' ),
-						'add_or_remove_items'         => __( 'Add or remove ' ),
-						'choose_from_most_used'       => __( 'Choose from the most used teachers' ),
-						'menu_name'                   => __( 'Writers' ),
+						'edit_item'                   => __( 'Edit Teacher' , 'universal'),
+						'update_item'                 => __( 'Update Teacher' , 'universal'),
+						'add_new_item'                => __( 'Add New Teacher' , 'universal'),
+						'new_item_name'               => __( 'New Teacher Name' , 'universal'),
+						'separate_items_with_commas'  => __( 'Separate teachers with commas' , 'universal'),
+						'add_or_remove_items'         => __( 'Add or remove ' , 'universal'),
+						'choose_from_most_used'       => __( 'Choose from the most used teachers' , 'universal'),
+						'menu_name'                   => __( 'Writers' , 'universal'),
 					),
 					'show_ui'       => true,
 					'query_var'     => true,
@@ -126,7 +128,7 @@ add_action( 'after_setup_theme', 'universal_theme_setup' );
 function universal_theme_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Сайдбар на главной', 'universal-example' ),
+			'name'          => esc_html__( __( 'Sidebar on main' , 'universal'), 'universal-example' ),
 			'id'            => 'main-sidebar',
 			'description'   => esc_html__( 'Add widgets here.', 'universal-example' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -140,7 +142,7 @@ function universal_theme_widgets_init() {
  	*/
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Сайдбар снизу', 'universal-example' ),
+			'name'          => esc_html__( __( 'Sidebar below' , 'universal'), 'universal-example' ),
 			'id'            => 'sidebar-bottom',
 			'description'   => esc_html__( 'Add widgets here.', 'universal-example' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -154,9 +156,9 @@ function universal_theme_widgets_init() {
  	*/
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Меню в подвале', 'universal-example' ),
+			'name'          => esc_html__( __( 'Menu in footer' , 'universal'), 'universal-example' ),
 			'id'            => 'sidebar-footer',
-			'description'   => esc_html__( 'Только для меню!', 'universal-example' ),
+			'description'   => esc_html__( __( 'Only for menu' , 'universal'), 'universal-example' ),
 			'before_widget' => '<section id="%1$s" class="footer-menu %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="footer-menu-title">',
@@ -169,7 +171,7 @@ function universal_theme_widgets_init() {
  	*/
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Текст в подвале', 'universal-example' ),
+			'name'          => esc_html__( __( 'Text in footer' , 'universal'), 'universal-example' ),
 			'id'            => 'sidebar-footer-text',
 			'description'   => esc_html__( 'Add menu here.', 'universal-example' ),
 			'before_widget' => '<section id="%1$s" class="footer-text %2$s">',
@@ -183,9 +185,9 @@ function universal_theme_widgets_init() {
  	*/
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Сайдбар для постов внизу', 'universal-example' ),
+			'name'          => esc_html__( __( 'Sidebar for posts below' , 'universal'), 'universal-example' ),
 			'id'            => 'sidebar-post',
-			'description'   => esc_html__( 'Добавить посты', 'universal-example' ),
+			'description'   => esc_html__( __( 'Add posts' , 'universal'), 'universal-example' ),
 			'before_widget' => '<section id="%1$s" class="post-page-sidebar %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="post-sidebar-title">',

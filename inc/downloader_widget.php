@@ -10,8 +10,8 @@ class Downloader_Widget extends WP_Widget {
 		// __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
 		parent::__construct(
 			'downloader_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: downloader_widget
-			'Полезные файлы',
-			array( 'description' => 'Файлы для скачивания', 'classname' => 'widget-downloader', )
+			__( 'Helpfull files' , 'universal'),
+			array( 'description' => __( 'Files for download' , 'universal'), 'classname' => 'widget-downloader', )
 		);
 
 		// скрипты/стили виджета, только если он активен
@@ -53,8 +53,8 @@ class Downloader_Widget extends WP_Widget {
 	 * @param array $instance сохраненные данные из настроек
 	 */
 	function form( $instance ) {
-		$title = @ $instance['title'] ?: 'Полезные файлы';
-        $description = @ $instance['description'] ?: 'Описание';
+		$title = @ $instance['title'] ?: __( 'Helpfull files' , 'universal');
+        $description = @ $instance['description'] ?: __( 'Description' , 'universal');
         $link = @ $instance['link'] ?: 'http://link/';
 
 		?>
